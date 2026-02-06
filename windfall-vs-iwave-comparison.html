@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windfall vs iWave: The Modern Choice for Major Gift Fundraising</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F5F5F5;
+            color: #4A4A4A;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header-nav {
+            background: #FFFFFF;
+            padding: 20px 0;
+            border-bottom: 1px solid #E5E5E5;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 28px;
+            height: 28px;
+            background: #00a5c3;
+            border-radius: 4px;
+        }
+
+        .nav-cta {
+            background: #7DB89C;
+            color: #FFFFFF;
+            padding: 14px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: #6da88b;
+            transform: translateY(-1px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #FFFFFF;
+            padding: 50px 0 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            color: #000000;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        .hero .subtitle {
+            font-size: 32px;
+            font-weight: 600;
+            color: #00a5c3;
+            margin-bottom: 10px;
+        }
+
+        .hero .tagline {
+            font-size: 18px;
+            color: #4A4A4A;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Metrics Banner */
+        .metrics-section {
+            background: linear-gradient(180deg, #f2f9fa, #d3f0f4);
+            padding: 40px 0;
+        }
+
+        .metrics-banner {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .metric-card {
+            text-align: center;
+        }
+
+        .metric-number {
+            font-size: 56px;
+            font-weight: 700;
+            color: #00a5c3;
+            margin-bottom: 4px;
+            line-height: 1;
+        }
+
+        .metric-label {
+            font-size: 18px;
+            color: #4A4A4A;
+            font-weight: 500;
+        }
+
+        /* Comparison Toggle */
+        .toggle-section {
+            background: #FFFFFF;
+            padding: 24px 0 16px;
+        }
+
+        .comparison-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .toggle-btn {
+            padding: 12px 24px;
+            background: #FFFFFF;
+            border: 2px solid #00a5c3;
+            border-radius: 4px;
+            color: #00a5c3;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .toggle-btn:hover {
+            background: #d3f0f4;
+        }
+
+        .toggle-btn.active {
+            background: #00a5c3;
+            color: #FFFFFF;
+        }
+
+        /* Comparison Grid */
+        .comparison-content {
+            background: #FFFFFF;
+            padding: 24px 0 50px;
+        }
+
+        .comparison-grid {
+            display: none;
+        }
+
+        .comparison-grid.active {
+            display: block;
+        }
+
+        .comparison-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 20px;
+            border-left: 4px solid #00a5c3;
+            padding-left: 20px;
+        }
+
+        .comparison-table {
+            background: #FFFFFF;
+            border: 1px solid #E5E5E5;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            background: #F5F5F5;
+            padding: 16px 20px;
+            font-weight: 600;
+            font-size: 16px;
+            color: #000000;
+            border-bottom: 2px solid #00a5c3;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            padding: 16px 20px;
+            border-bottom: 1px solid #F5F5F5;
+            transition: all 0.2s ease;
+        }
+
+        .table-row:hover {
+            background: #f2f9fa;
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .feature-name {
+            font-weight: 600;
+            color: #000000;
+            font-size: 18px;
+        }
+
+        .feature-description {
+            font-size: 16px;
+            color: #4A4A4A;
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+
+        .checkmark {
+            color: #7DB89C;
+            font-size: 28px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .xmark {
+            color: #E74C3C;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .partial {
+            color: #F39C12;
+            font-size: 14px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Winner Badge */
+        .winner-badge {
+            display: inline-block;
+            background: #00a5c3;
+            color: #FFFFFF;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Highlight Windfall wins */
+        .windfall-win {
+            background: linear-gradient(90deg, #f2f9fa 0%, #FFFFFF 100%);
+            border-left: 3px solid #00a5c3;
+        }
+
+        /* Dark Section */
+        .dark-section {
+            background: #2F5557;
+            color: #FFFFFF;
+            padding: 40px 0;
+        }
+
+        .dark-section .section-title {
+            color: #FFFFFF;
+            border-left-color: #7DB89C;
+        }
+
+        .dark-section .comparison-table {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark-section .table-header {
+            background: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+            border-bottom-color: #7DB89C;
+        }
+
+        .dark-section .table-row {
+            border-bottom-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .dark-section .table-row:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .dark-section .feature-name {
+            color: #FFFFFF;
+        }
+
+        .dark-section .feature-description {
+            color: #d3f0f4;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #FFFFFF;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .cta-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 12px;
+        }
+
+        .cta-description {
+            font-size: 18px;
+            color: #4A4A4A;
+            margin-bottom: 24px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: #7DB89C;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #6da88b;
+            transform: translateY(-2px);
+        }
+
+        /* Value Cell Styles */
+        .value-cell {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .value-strong {
+            color: #00a5c3;
+            font-weight: 700;
+        }
+
+        .value-weak {
+            color: #4A4A4A;
+            font-weight: 400;
+        }
+
+        .value-warning {
+            color: #F39C12;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero .subtitle {
+                font-size: 24px;
+            }
+
+            .table-header, .table-row {
+                grid-template-columns: 1fr;
+                text-align: left;
+            }
+
+            .checkmark, .xmark, .partial, .value-cell {
+                text-align: left;
+                margin-top: 8px;
+            }
+
+            .comparison-toggle {
+                flex-direction: column;
+            }
+
+            .toggle-btn {
+                width: 100%;
+            }
+
+            .metrics-banner {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .metric-number {
+                font-size: 42px;
+            }
+        }
+
+        /* Bottom Line Special Styling */
+        .bottom-line-row {
+            background: #f2f9fa;
+            padding: 20px !important;
+        }
+
+        .bottom-line-row .feature-name {
+            font-size: 20px;
+            color: #00a5c3;
+        }
+
+        .bottom-line-row .feature-description {
+            font-size: 16px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <div class="header-nav">
+        <div class="container">
+            <a href="#" class="logo">
+                <div class="logo-icon"></div>
+                WINDFALL
+            </a>
+            <a href="#" class="nav-cta">Request a Demo</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1>Windfall vs iWave</h1>
+            <p class="subtitle">The Modern Choice for Major Gift Fundraising</p>
+            <p class="tagline">Harness precision wealth data and AI-powered insights to identify and engage high-net-worth prospects faster than ever</p>
+        </div>
+    </div>
+
+    <!-- Metrics Banner -->
+    <div class="metrics-section">
+        <div class="container">
+            <div class="metrics-banner">
+                <div class="metric-card">
+                    <div class="metric-number">Weekly</div>
+                    <div class="metric-label">Data Refresh Rate</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">25+</div>
+                    <div class="metric-label">Career Intelligence Attributes</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">100%</div>
+                    <div class="metric-label">Household-Level Precision</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">1,500+</div>
+                    <div class="metric-label">Organizations Trust Windfall</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comparison Toggle -->
+    <div class="toggle-section">
+        <div class="container">
+            <div class="comparison-toggle">
+                <button class="toggle-btn active" onclick="showComparison('overview')">Overview</button>
+                <button class="toggle-btn" onclick="showComparison('features')">Feature Comparison</button>
+                <button class="toggle-btn" onclick="showComparison('use-cases')">Best For</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comparison Content -->
+    <div class="comparison-content">
+        <div class="container">
+            <!-- Overview Comparison -->
+            <div id="overview" class="comparison-grid active">
+                <div class="comparison-section">
+                    <h2 class="section-title">Where Windfall Wins</h2>
+                    <div class="comparison-table">
+                        <div class="table-row windfall-win">
+                            <div>
+                                <div class="feature-name">Simplicity & Speed to Insight <span class="winner-badge">Windfall Wins</span></div>
+                                <div class="feature-description">Purpose-built for wealth screening. Get actionable insights in minutes, not hours. No steep learning curve or complex training required.</div>
+                            </div>
+                            <div class="checkmark">✓</div>
+                            <div class="xmark">✗</div>
+                        </div>
+                        <div class="table-row windfall-win">
+                            <div>
+                                <div class="feature-name">Modern AI/ML Infrastructure <span class="winner-badge">Windfall Wins</span></div>
+                                <div class="feature-description">Built AI-first with weekly automated data refresh. Always current, always accurate. Deterministic algorithms with verified data sources.</div>
+                            </div>
+                            <div class="checkmark">✓</div>
+                            <div class="partial">Legacy System</div>
+                        </div>
+                        <div class="table-row windfall-win">
+                            <div>
+                                <div class="feature-name">Career Intelligence <span class="winner-badge">Windfall Wins</span></div>
+                                <div class="feature-description">25+ firmographic attributes including employer, job title, job start date, and company size provide critical context for outreach strategy.</div>
+                            </div>
+                            <div class="checkmark">✓</div>
+                            <div class="partial">Limited</div>
+                        </div>
+                        <div class="table-row windfall-win">
+                            <div>
+                                <div class="feature-name">Household-Level Precision <span class="winner-badge">Windfall Wins</span></div>
+                                <div class="feature-description">Unique household-level wealth data provides unmatched accuracy. Individual donor data misses the complete financial picture.</div>
+                            </div>
+                            <div class="checkmark">✓</div>
+                            <div class="xmark">Individual Only</div>
+                        </div>
+                        <div class="table-row windfall-win">
+                            <div>
+                                <div class="feature-name">Real-Time Asset Intelligence <span class="winner-badge">Windfall Wins</span></div>
+                                <div class="feature-description">Liquidity events, real estate holdings, SEC filings, and wealth indicators updated weekly. Catch opportunities before your competitors.</div>
+                            </div>
+                            <div class="checkmark">✓</div>
+                            <div class="partial">Delayed Updates</div>
+                        </div>
+                        <div class="table-row windfall-win">
+                            <div>
+                                <div class="feature-name">Implementation Time <span class="winner-badge">Windfall Wins</span></div>
+                                <div class="feature-description">Drive value in days, not weeks. Simple onboarding gets your team up and running fast.</div>
+                            </div>
+                            <div class="checkmark">✓</div>
+                            <div class="xmark">✗</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-section">
+                    <h2 class="section-title">Where iWave Has Strengths</h2>
+                    <div class="comparison-table">
+                        <div class="table-row">
+                            <div>
+                                <div class="feature-name">360° Donor Profiles</div>
+                                <div class="feature-description">Aggregates 44+ data sources into comprehensive profiles with wealth, philanthropic, business, and relationship indicators.</div>
+                            </div>
+                            <div class="partial">Focused</div>
+                            <div class="checkmark">✓</div>
+                        </div>
+                        <div class="table-row">
+                            <div>
+                                <div class="feature-name">Built-in Affinity & Propensity Scoring</div>
+                                <div class="feature-description">Pre-configured AI-powered scoring models for donor capacity, affinity, and giving propensity measures.</div>
+                            </div>
+                            <div class="xmark">✗</div>
+                            <div class="checkmark">✓</div>
+                        </div>
+                        <div class="table-row">
+                            <div>
+                                <div class="feature-name">Relationship Mapping</div>
+                                <div class="feature-description">Board connections and warm introduction paths help identify personal relationships for strategic outreach.</div>
+                            </div>
+                            <div class="xmark">✗</div>
+                            <div class="checkmark">✓</div>
+                        </div>
+                        <div class="table-row">
+                            <div>
+                                <div class="feature-name">Canadian Coverage</div>
+                                <div class="feature-description">Only solution with comprehensive US and Canadian wealth screening data for cross-border fundraising.</div>
+                            </div>
+                            <div class="partial">US Only</div>
+                            <div class="checkmark">✓</div>
+                        </div>
+                        <div class="table-row">
+                            <div>
+                                <div class="feature-name">Philanthropic History</div>
+                                <div class="feature-description">Access to past charitable giving records and mission alignment insights for relationship-based fundraising.</div>
+                            </div>
+                            <div class="xmark">✗</div>
+                            <div class="checkmark">✓</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Comparison -->
+            <div id="features" class="comparison-grid">
+                <div class="comparison-section">
+                    <h2 class="section-title">Platform Capabilities</h2>
+                    <div class="comparison-table">
+                        <div class="table-header">
+                            <div>Capability</div>
+                            <div>Windfall</div>
+                            <div>iWave</div>
+                        </div>
+                        <div class="table-row windfall-win">
+                            <div>
+                                <div class="feature-name">Data Refresh Frequency</div>
+                                <div class="feature-description">How often underlying data is updated</div>
+                            </div>
+                            <div class="value-cell value-strong">Weekly</div>
+                            <div class="value-cell value-weak">Monthly</div>
+                        </div>
+                        <div class="table-row">
+                            <div>
+                                <div class="feature-name">Net Worth Estimation</div>
+                                <div class="feature-description">Household wealth calculation accuracy</div>
+                            </div>
+                            <div class="checkmark">✓</div>
+                            <div class="checkmark">✓</div>
+                        </div>
+                        <div class="table-row windfall-win">
+                            <div>
+                                <div class="feature-name">Liquidity Event Tracking</div>
+                                <div class="feature-description">IPOs, M&A, stock transactions, wealth changes</div>
+                            </div>
+                            <div class="checkmark">✓</div>
+                            <div class="partial">Limited</div>
+                        </div>
+                        <div class="table-row">
+                            <div>
+                                <div class="feature-name">Philanthropic History</div>
+                                <div class="feature-description">Past charitable giving records</div>
+                            </div>
+                            <div class="xmark">✗</div>
+                            <div class="checkmark">✓</div>
+                        </div>
+                        <div class="table-row windfall-win">
+                            <div>
+                                <div class="feature-name">User Experience</div>
+                                <div class="feature-description">Ease of use and time to value</div>
+                            </div>
+                            <div class="value-cell value-strong">Simple</div>
+                            <div class="value-cell value-warning">Complex</div>
+                        </div>
+                        <div class="table-row windfall-win">
+                            <div>
+                                <div class="feature-name">AI-Powered Workflows</div>
+                                <div class="feature-description">Automated insights and recommendations</div>
+                            </div>
+                            <div class="checkmark">✓</div>
+                            <div class="partial">Basic</div>
+                        </div>
+                        <div class="table-row">
+                            <div>
+                                <div class="feature-name">Data Sources</div>
+                                <div class="feature-description">Number of integrated data providers</div>
+                            </div>
+                            <div class="value-cell value-weak">Curated</div>
+                            <div class="value-cell value-strong">44+</div>
+                        </div>
+                        <div class="table-row windfall-win">
+                            <div>
+                                <div class="feature-name">Implementation Time</div>
+                                <div class="feature-description">Time from purchase to value</div>
+                            </div>
+                            <div class="value-cell value-strong">Days</div>
+                            <div class="value-cell value-warning">Weeks</div>
+                        </div>
+                        <div class="table-row windfall-win">
+                            <div>
+                                <div class="feature-name">Career Intelligence Depth</div>
+                                <div class="feature-description">Employment and firmographic attributes</div>
+                            </div>
+                            <div class="value-cell value-strong">25+ Attributes</div>
+                            <div class="value-cell value-weak">Basic</div>
+                        </div>
+                        <div class="table-row">
+                            <div>
+                                <div class="feature-name">Relationship Mapping</div>
+                                <div class="feature-description">Board connections and warm introductions</div>
+                            </div>
+                            <div class="xmark">✗</div>
+                            <div class="checkmark">✓</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Use Cases Comparison -->
+            <div id="use-cases" class="comparison-grid">
+                <div class="comparison-section">
+                    <h2 class="section-title">Choose Windfall If You...</h2>
+                    <div class="comparison-table">
+                        <div class="table-row windfall-win">
+                            <div>
+                                <div class="feature-name">Focus on Major Gifts & Planned Giving</div>
+                                <div class="feature-description">Precision wealth data and liquidity event tracking drive high-value donor identification and perfect timing for asks.</div>
+                            </div>
+                            <div class="checkmark" style="font-size: 32px;">✓</div>
+                            <div></div>
+                        </div>
+                        <div class="table-row windfall-win">
+                            <div>
+                                <div class="feature-name">Need Speed & Simplicity</div>
+                                <div class="feature-description">Get insights fast without complex training or steep learning curves. Purpose-built for wealth screening efficiency.</div>
+                            </div>
+                            <div class="checkmark" style="font-size: 32px;">✓</div>
+                            <div></div>
+                        </div>
+                        <div class="table-row windfall-win">
+                            <div>
+                                <div class="feature-name">Want Always-Current Data</div>
+                                <div class="feature-description">Weekly refresh ensures you're acting on the latest intelligence. Never miss a liquidity event or career change.</div>
+                            </div>
+                            <div class="checkmark" style="font-size: 32px;">✓</div>
+                            <div></div>
+                        </div>
+                        <div class="table-row windfall-win">
+                            <div>
+                                <div class="feature-name">Value Career Intelligence</div>
+                                <div class="feature-description">Employer, title, and firmographic data inform personalized outreach strategy and timing.</div>
+                            </div>
+                            <div class="checkmark" style="font-size: 32px;">✓</div>
+                            <div></div>
+                        </div>
+                        <div class="table-row windfall-win">
+                            <div>
+                                <div class="feature-name">Operate in US Market Only</div>
+                                <div class="feature-description">Focused US coverage with unmatched household-level accuracy and deterministic data methodology.</div>
+                            </div>
+                            <div class="checkmark" style="font-size: 32px;">✓</div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-section">
+                    <h2 class="section-title">Choose iWave If You...</h2>
+                    <div class="comparison-table">
+                        <div class="table-row">
+                            <div>
+                                <div class="feature-name">Need Comprehensive Donor Profiles</div>
+                                <div class="feature-description">44+ data sources create complete constituent views with wealth, philanthropic, business, and relationship indicators.</div>
+                            </div>
+                            <div></div>
+                            <div class="checkmark" style="font-size: 32px;">✓</div>
+                        </div>
+                        <div class="table-row">
+                            <div>
+                                <div class="feature-name">Require Built-in Affinity Scoring</div>
+                                <div class="feature-description">Pre-configured AI models for mission alignment help identify donors most likely to care about your cause.</div>
+                            </div>
+                            <div></div>
+                            <div class="checkmark" style="font-size: 32px;">✓</div>
+                        </div>
+                        <div class="table-row">
+                            <div>
+                                <div class="feature-name">Value Relationship Mapping</div>
+                                <div class="feature-description">Board connections and warm introduction paths enable strategic relationship-based fundraising.</div>
+                            </div>
+                            <div></div>
+                            <div class="checkmark" style="font-size: 32px;">✓</div>
+                        </div>
+                        <div class="table-row">
+                            <div>
+                                <div class="feature-name">Fundraise in Canada</div>
+                                <div class="feature-description">Need Canadian wealth and philanthropic data for cross-border development programs.</div>
+                            </div>
+                            <div></div>
+                            <div class="checkmark" style="font-size: 32px;">✓</div>
+                        </div>
+                        <div class="table-row">
+                            <div>
+                                <div class="feature-name">Want Philanthropic History</div>
+                                <div class="feature-description">Past giving patterns and charitable priorities inform cultivation strategy and messaging.</div>
+                            </div>
+                            <div></div>
+                            <div class="checkmark" style="font-size: 32px;">✓</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-section">
+                    <h2 class="section-title">The Bottom Line</h2>
+                    <div class="comparison-table">
+                        <div class="table-row bottom-line-row">
+                            <div>
+                                <div class="feature-name">Windfall</div>
+                                <div class="feature-description">
+                                    The modern choice for organizations focused on major gifts and planned giving.
+                                    Harness precision wealth data, career intelligence, and AI-powered workflows
+                                    to identify and engage high-net-worth prospects faster than ever. Drive more effective
+                                    outreach with weekly-refreshed data and household-level insights.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-row bottom-line-row">
+                            <div>
+                                <div class="feature-name">iWave</div>
+                                <div class="feature-description">
+                                    Comprehensive prospect research platform for organizations that need
+                                    360° donor profiles, relationship mapping, and built-in affinity scoring.
+                                    Best for teams with broader fundraising needs beyond wealth screening,
+                                    including Canadian coverage and philanthropic history tracking.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dark Section for Trusted By -->
+    <div class="dark-section">
+        <div class="container">
+            <div class="comparison-section">
+                <h2 class="section-title">Trusted By 1,500+ Organizations</h2>
+                <div style="text-align: center; font-size: 18px; color: #d3f0f4;">
+                    <p style="margin-bottom: 20px;">Leading nonprofits choose Windfall to supercharge their fundraising efforts with precision wealth data and AI-powered insights.</p>
+                    <p style="font-size: 16px; font-style: italic;">Join organizations like Make-A-Wish, University of Michigan, and Cure Alzheimer's Fund</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Supercharge Your Major Gift Strategy?</h2>
+            <p class="cta-description">
+                See how Windfall's precision wealth data and AI-powered insights help organizations like yours
+                identify high-value prospects and drive more effective fundraising.
+            </p>
+            <a href="#" class="cta-button">Request a Demo</a>
+        </div>
+    </div>
+
+    <script>
+        function showComparison(section) {
+            // Hide all grids
+            document.querySelectorAll('.comparison-grid').forEach(grid => {
+                grid.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            document.querySelectorAll('.toggle-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected grid
+            document.getElementById(section).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
