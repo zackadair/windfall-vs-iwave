@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://windfall-vs-iwave.vercel.app/sitemap.xml
